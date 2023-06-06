@@ -3,7 +3,7 @@ import random
 
 alphabet = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','.', '_','!','#','$','%']
 
-class PasswordGen():
+class PasswordGen(object):
 
     def __innit__(self, alphabet, lettersL, symbolsL):
        
@@ -35,21 +35,25 @@ class PasswordGen():
             symbolsL.append(alphabet[x])
         return symbolsL
 
-   
+    x = randint(randint(20,30),randint(30,40))
+    password = []
     lettersL = letters(alphabet)
     numbersL = numbers(alphabet)
     symbolsL = symbols(alphabet)
     randoml = []
-    password = []
-    while len(randoml) < randint(randint(12, 20),(len(lettersL) + len(numbersL) + len(symbolsL))):
-        randoml.append(random.choice(lettersL))
-        randoml.append(random.choice(numbersL))
-        randoml.append(random.choice(symbolsL))
 
-    while len(password) < randint(randint(12,15),randint(20,30)):
-        password.append(random.choice(randoml))
+    while len(password) < x:
+        lettersL = letters(alphabet)
+        numbersL = numbers(alphabet)
+        symbolsL = symbols(alphabet)
+        randoml.append((random.choice(lettersL)))
+        randoml.append((random.choice(numbersL)))
+        randoml.append((random.choice(symbolsL)))
+        if len(randoml) > 10000: password.append(random.choice(randoml)) 
+        
+            
     
-    print('Your generated password is:',''.join(password))
-
+    print('Your generated password is:', ''.join(password))
+    
 
 PasswordGen()
