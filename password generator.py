@@ -41,7 +41,7 @@ class PasswordGen():
     symbolsL = symbols(alphabet)
     randoml = []
     password = []
-    while len(randoml) < randint(12,(len(lettersL) + len(numbersL) + len(symbolsL))):
+    while len(randoml) < randint(randint(12, 20),(len(lettersL) + len(numbersL) + len(symbolsL))):
         randoml.append(random.choice(lettersL))
         randoml.append(random.choice(numbersL))
         randoml.append(random.choice(symbolsL))
