@@ -1,1 +1,0 @@
-print('External file')
