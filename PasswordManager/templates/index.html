@@ -1,0 +1,24 @@
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+
+        <form class = "grid" action = "/result" method = "POST">
+            
+            <center><label for = "Name">Here you can generate random passwords</label></center>
+            
+            <center><input type="Submit" class = "file_submit" value="Generate Password"></center>
+
+            <center>
+                {% if password%}
+                <h3 style="color: violet">Your password is {{password}}</h3>
+                {% endif%}
+            </center>
+
+        </form>
+
+
+    </body>
+</html>
